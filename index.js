@@ -1,13 +1,8 @@
 
-
 var curPage = 1
-
 var perPageCount = 10
-
 var colSumHeight = []
-
 var nodeWidth = $('.item').outerWidth(true)
-
 var colNum = Math.floor($('#pic-ct').width() / nodeWidth)
 
 for(var i = 0 ; i < colNum ; i++){
@@ -27,7 +22,6 @@ function start(){
 			var $node = getNode(news)
 			$node.find('img').load(function(){
 				$('#pic-ct').append($node)
-				console.log($node, 'loaded...')
 				waterFallPlace($node)
 			})
 		})
@@ -115,7 +109,6 @@ function waterFallPlace($node){
   $node.css({
     left:nodeWidth * idx,
     top:minSumHeight,
-    opacity:1
   })
   
   colSumHeight[idx] = $node.outerHeight(true) + colSumHeight[idx]
